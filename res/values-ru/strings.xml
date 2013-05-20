@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- App wide -->
+    <string name="hello_world">Привет мир!</string>
+
+    <!-- Menu -->
+    <string name="action_home">Дом</string>
+    <string name="action_settings">Предпочтения</string>
+    <string name="action_about">О &amp; авторским</string>
+    <string name="action_rate">Оценить это приложение</string>
+    <string name="action_purchase">Покупка объявление бесплатной версии</string>
+
+    <!-- Buttons main screen -->
+    <string name="button_dynamic">несколько обоев</string>
+    <string name="button_single">отдельные обои</string>
+    <string name="button_gallery">галерея</string>
+    <string name="button_settings">предпочтения</string>
+
+    <!-- Titles -->
+    <string name="title_activity_gallery">Галерея</string>
+    <string name="title_activity_about">О</string>
+
+</resources>

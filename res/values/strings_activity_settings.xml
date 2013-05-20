@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Multi image -->
+	<string name="pref_header_multi">Multi-image settings</string>
+	<string name="pref_title_enable_multi_image">Enabled</string>
+	<string name="pref_description_enable_multi_image">Enable the wallpaper change service</string>
+	
+	<string name="pref_title_change_interval">Change interval</string>
+	<string name="pref_description_change_interval">Set the interval in minutes</string>
+    <string name="pref_dialog_change_interval_plus_sign">+</string>
+    <string name="pref_dialog_change_interval_minus_sign">-</string>
+    <string name="pref_dialog_change_interval_text">60 = 1 hour\n1440 = 1 day
+    </string>
+		
+	<string name="pref_title_random_order">Random order</string>
+	<string name="pref_description_random_order">Display images in random order instead of publish order</string>
+	
+	<string name="pref_title_double_tap">Double tap to change image</string>
+	
+	<string name="pref_title_multi_use_blur">Blur images</string>
+	<string name="pref_description_multi_use_blur">Apply blur effect to background images</string>
+	
+	<string name="pref_title_images_that_dont_fit">Image positioning</string>
+	
+	<!-- Single image -->
+	<string name="pref_header_single">Single-image settings</string>
+	<string name="pref_title_single_use_blur">Blur image</string>
+	<string name="pref_description_single_use_blur">Apply blur effect to background image</string>
+
+    <!--
+    <string-array name="pref_sync_frequency_titles">
+        <item>15 minutes</item>
+        <item>30 minutes</item>
+        <item>1 hour</item>
+        <item>3 hours</item>
+        <item>6 hours</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_sync_frequency_values">
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>-1</item>
+    </string-array>
+    -->
+	
+</resources>

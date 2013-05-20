@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+                  xmlns:custom="http://schemas.android.com/apk/res-auto">
+
+    <!--
+         A 'parent' preference, which enables/disables child preferences (below)
+         when checked/unchecked.
+    -->
+    <PreferenceCategory 
+        android:title="@string/pref_header_multi"
+        android:key="pref_multi_storage_settings">
+        
+	    <CheckBoxPreference
+	        android:defaultValue="false"
+	        android:key="multi_image_enable"
+	        android:title="@string/pref_title_enable_multi_image"
+	        android:summary="@string/pref_description_enable_multi_image" />
+
+		<nl.gorinskat.crystalia.NumberPickerPreference
+		    android:defaultValue="5"
+            android:max="100"
+            custom:min="1"
+            android:dependency="multi_image_enable"
+		    android:key="multi_image_change_interval"
+		    android:title="@string/pref_title_change_interval"
+		    android:summary="@string/pref_description_change_interval"
+		    />
+
+	    <CheckBoxPreference
+	        android:defaultValue="false"
+	        android:dependency="multi_image_enable"
+	        android:key="multi_image_random_order"
+	        android:title="@string/pref_title_random_order"
+	        android:summary="@string/pref_description_random_order" />
+	    
+	    <CheckBoxPreference
+	        android:defaultValue="false"
+	        android:dependency="multi_image_enable"
+	        android:key="multi_image_double_tap"
+	        android:title="@string/pref_title_double_tap" />
+	    
+	    <CheckBoxPreference
+	        android:defaultValue="false"
+	        android:dependency="multi_image_enable"
+	        android:key="multi_image_use_blur"
+	        android:title="@string/pref_title_multi_use_blur"
+	        android:summary="@string/pref_description_multi_use_blur" />
+	    
+		<!-- Insert: Image position -->
+	
+	</PreferenceCategory> 
+	
+    <PreferenceCategory 
+        android:title="@string/pref_header_single"
+        android:key="pref_single_storage_settings">
+	    
+        <CheckBoxPreference
+	        android:defaultValue="false"
+	        android:key="single_image_use_blur"
+	        android:title="@string/pref_title_single_use_blur"
+	        android:summary="@string/pref_description_single_use_blur" />
+        
+    </PreferenceCategory>
+
+</PreferenceScreen>

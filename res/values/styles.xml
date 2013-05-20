@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="CrystaliaBaseTheme" parent="android:Theme">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Crystalia theme. -->
+    <style name="CrystaliaTheme" parent="CrystaliaBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+        <item name="android:windowBackground">@color/background_color_app</item>
+        <item name="android:colorBackgroundCacheHint">@color/background_color_app</item>
+        <item name="android:colorBackground">@color/background_color_app</item>
+    </style>
+
+    <!-- Colors -->
+    <color name="text_color_light">#ffffff</color>
+    <color name="text_color_dark">#aaaaaa</color>
+    <color name="background_color_app">#131313</color>
+    <color name="background_color_dark">#9d7180</color>
+    <color name="background_color_light">#719d9c</color>
+    <color name="background_color_highlight">#719d9c</color>
+
+    <!-- Buttons -->
+    <style name="Button" parent="@android:style/Widget.Button">
+        <item name="android:textColor">@color/text_color_light</item>
+    </style>
+
+    <style name="Button.Home">
+        <item name="android:layout_width">@dimen/button_home_width</item>
+        <item name="android:layout_height">@dimen/button_home_height</item>
+    </style>
+
+    <style name="Button.Home.Dark">
+        <item name="android:background">@drawable/button_selector_dark</item>
+    </style>
+    <style name="Button.Home.Light">
+        <item name="android:background">@drawable/button_selector_light</item>
+    </style>
+
+    <style name="Button.Default">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingRight">15dp</item>
+        <item name="android:paddingBottom">10dp</item>
+    </style>
+
+    <style name="Button.Default.Dark">
+        <item name="android:background">@drawable/button_selector_dark</item>
+    </style>
+    <style name="Button.Default.Light">
+        <item name="android:background">@drawable/button_selector_light</item>
+    </style>
+
+</resources>

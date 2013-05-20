@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- App wide -->
+    <string name="app_name">Crystalia</string>
+    <string name="hello_world">Hello world!</string>
+
+    <!-- Menu -->
+    <string name="action_home">Home</string>
+    <string name="action_settings">Preferences</string>
+    <string name="action_about">About &amp; Copyright</string>
+    <string name="action_rate">Rate this app</string>
+    <string name="action_purchase">Purchase ad-free version</string>
+
+    <!-- Buttons main screen -->
+    <string name="button_dynamic">wallpaper</string>
+    <string name="button_single">single</string>
+    <string name="button_gallery">gallery</string>
+    <string name="button_settings">preferences</string>
+
+    <string name="button_set_wallpaper">set wallpaper</string>
+
+    <!-- Titles -->
+    <string name="title_activity_gallery">Gallery</string>
+    <string name="title_activity_wallpaper_editor">WallpaperEditor</string>
+    <string name="title_activity_menu">MenuActivity</string>
+    <string name="title_activity_about">About</string>
+
+    <!-- About activity -->
+    <string name="text_activity_about">
+<![CDATA[
+© 2013 Crystalia
+   	]]>
+    </string>
+    <string name="title_activity_settings_fragment">SettingsFragment</string>
+    <string name="title_activity_number_picker">NumberPickerActivity</string>
+    <string name="title_activity_number_picker_preference">NumberPickerPreference</string>
+
+</resources>

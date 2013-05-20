@@ -1,0 +1,87 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity"
+    android:background="@drawable/background" >
+
+    <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/header"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:scaleType="centerInside"
+            android:src="@drawable/header_home"
+            android:adjustViewBounds="true"
+            android:maxHeight="50dp"/>
+
+    <RelativeLayout
+        android:id="@+id/rlButtonWrapper"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/header"
+        android:layout_above="@+id/footer"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_vertical|center_horizontal">
+
+        <Button
+            android:id="@+id/button_dynamic"
+            style="@style/Button.Home.Dark"
+            android:layout_alignParentLeft="false"
+            android:layout_alignParentTop="false"
+            android:layout_marginRight="@dimen/button_home_margin"
+            android:text="@string/button_dynamic"
+            android:onClick="buttonAction"
+                />
+
+        <Button
+            android:id="@+id/button_single"
+            style="@style/Button.Home.Light"
+            android:layout_alignTop="@+id/button_dynamic"
+            android:layout_toRightOf="@+id/button_dynamic"
+            android:layout_marginLeft="@dimen/button_home_margin"
+            android:layout_marginRight="@dimen/button_home_margin"
+            android:text="@string/button_single"
+            android:onClick="buttonAction"
+                />
+
+	    <Button
+	        android:id="@+id/button_gallery"
+            style="@style/Button.Home.Dark"
+			android:layout_alignTop="@+id/button_dynamic"
+			android:layout_toRightOf="@+id/button_single"
+            android:layout_marginLeft="@dimen/button_home_margin"
+            android:layout_marginRight="@dimen/button_home_margin"
+	        android:text="@string/button_gallery"
+            android:onClick="buttonAction"
+                />
+	
+	    <Button
+	        android:id="@+id/button_settings"
+            style="@style/Button.Home.Light"
+	        android:layout_alignTop="@+id/button_dynamic"
+	        android:layout_toRightOf="@+id/button_gallery"
+            android:layout_marginLeft="@dimen/button_home_margin"
+	        android:text="@string/action_settings"
+            android:onClick="buttonAction"
+                />
+    
+    </RelativeLayout>
+
+    <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/footer"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/footer_home"
+            android:adjustViewBounds="true"
+            android:maxHeight="40dp"
+            android:scaleType="centerInside"/>
+
+</RelativeLayout>

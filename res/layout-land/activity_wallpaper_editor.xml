@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context=".MainActivity"
+        >
+
+    <!--<RelativeLayout-->
+            <!--android:id="@+id/rlHeader"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentTop="true"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!-->-->
+    <!--</RelativeLayout>-->
+
+    <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/header"
+            android:layout_alignParentLeft="false"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/header"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
+            android:maxHeight="50dp"/>
+
+    <RelativeLayout
+            android:id="@+id/rlContentWrapper"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@+id/header"
+            android:layout_above="@+id/footer"
+            android:gravity="center_horizontal">
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                >
+
+            <TextView
+                    android:id="@+id/textfield"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:text="@string/hello_world"
+                    android:layout_centerInParent="true"
+                    android:layout_weight="1"
+                    android:textAlignment="center"/>
+
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:measureWithLargestChild="false"
+                    android:gravity="center">
+
+                <Button
+                        android:id="@+id/button_settings"
+                        style="@style/Button.Default.Light"
+                        android:text="@string/button_settings"
+                        android:onClick="buttonAction"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="@dimen/button_default_margin"/>
+
+                <Button
+                        android:id="@+id/button_set_wallpaper"
+                        style="@style/Button.Default.Light"
+                        android:layout_toRightOf="@+id/button_settings"
+                        android:text="@string/button_set_wallpaper"
+                        android:onClick="buttonAction"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginTop="@dimen/button_default_margin"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/footer"
+            android:layout_alignParentLeft="false"
+            android:layout_alignParentBottom="true"
+            android:scaleType="centerInside"
+            android:src="@drawable/footer"
+            android:maxHeight="40dp"
+            android:adjustViewBounds="true"/>
+
+    <!--<RelativeLayout-->
+            <!--android:id="@+id/rlFooter"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentBottom="true"-->
+            <!--android:layout_marginRight="5dp"-->
+            <!--android:layout_marginTop="5dp">-->
+    <!--</RelativeLayout>-->
+
+</RelativeLayout>

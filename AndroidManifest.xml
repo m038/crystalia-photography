@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="nl.gorinskat.crystalia"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="17" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:theme="@style/CrystaliaTheme" >
+        <activity android:name="nl.gorinskat.crystalia.CrystaliaActivity" />
+        <activity
+                android:name="nl.gorinskat.crystalia.MainActivity"
+                android:label="@string/app_name"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="nl.gorinskat.crystalia.GalleryActivity"
+            android:label="@string/title_activity_gallery" >
+        </activity>
+        <activity
+            android:name="nl.gorinskat.crystalia.WallpaperEditorActivity"
+            android:label="@string/title_activity_wallpaper_editor" >
+        </activity>
+        <activity
+            android:name="nl.gorinskat.crystalia.AboutActivity"
+            android:label="@string/title_activity_about" >
+        </activity>
+        <activity
+            android:name="nl.gorinskat.crystalia.SettingsActivity"
+            android:enabled="true"
+            android:label="@string/title_activity_settings" >
+            <intent-filter>
+                <category android:name="android.intent.category.PREFERENCE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="nl.gorinskat.crystalia.SettingsFragment"
+            android:label="@string/title_activity_settings_fragment" >
+        </activity>
+    </application>
+
+</manifest>
