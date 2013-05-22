@@ -57,7 +57,7 @@ public class NumberPickerPreference extends DialogPreference {
     protected void onSetInitialValue(boolean restore, Object defaultValue)
     {
         setValue(restore ? getPersistedString(String.valueOf(DEFAULT_VALUE))
-                : (String) defaultValue);
+                : String.valueOf(defaultValue));
     }
 
     @Override
@@ -131,6 +131,9 @@ public class NumberPickerPreference extends DialogPreference {
 
     public void setValue(String sValue)
     {
+        if (sValue.length() <= 0) {
+            sValue = String.valueOf(getMinValue());
+        }
 
         // Convert to int
         int iValue = Integer.parseInt(sValue);
