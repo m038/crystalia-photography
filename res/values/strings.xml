@@ -29,7 +29,9 @@
     <!-- About activity -->
     <string name="text_activity_about">
 <![CDATA[
-© 2013 Crystalia
+© 2013 Crystalia\n
+All images are property of Crystalia Photograpy - Karina Vasiljeva.\n
+Unauthorized usage of the works is prohibited.
    	]]>
     </string>
     <string name="title_activity_settings_fragment">SettingsFragment</string>

@@ -34,13 +34,14 @@
             android:layout_height="fill_parent"
             android:layout_below="@+id/header"
             android:layout_above="@+id/footer"
-            android:gravity="center_horizontal">
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/activity_horizontal_margin">
         <TextView
                 android:id="@+id/textfield"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/hello_world"
-                android:layout_centerInParent="true"/>
+                />
 
         <Button
                 android:id="@+id/button_settings"
@@ -70,7 +71,9 @@
             android:layout_alignParentLeft="false"
             android:layout_alignParentBottom="true"
             android:scaleType="centerInside"
-            android:src="@drawable/footer"/>
+            android:src="@drawable/footer"
+            android:adjustViewBounds="true"
+            android:maxHeight="30dp"/>
 
     <!--<RelativeLayout-->
             <!--android:id="@+id/rlFooter"-->

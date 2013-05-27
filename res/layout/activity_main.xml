@@ -79,6 +79,8 @@
         android:contentDescription="Footer image"
         android:src="@drawable/footer_home"
         android:layout_alignParentLeft="true"
-        android:scaleType="centerInside"/>
+        android:scaleType="centerInside"
+        android:maxHeight="30dp"
+        android:adjustViewBounds="true"/>
 
 </RelativeLayout>

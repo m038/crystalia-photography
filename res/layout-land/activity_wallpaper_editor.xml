@@ -36,7 +36,8 @@
             android:layout_height="fill_parent"
             android:layout_below="@+id/header"
             android:layout_above="@+id/footer"
-            android:gravity="center_horizontal">
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/activity_horizontal_margin">
 
         <LinearLayout
                 android:orientation="horizontal"
@@ -66,7 +67,8 @@
                         android:text="@string/button_settings"
                         android:onClick="buttonAction"
                         android:layout_alignParentBottom="true"
-                        android:layout_marginBottom="@dimen/button_default_margin"/>
+                        android:layout_marginBottom="@dimen/button_default_margin"
+                        android:layout_width="fill_parent"/>
 
                 <Button
                         android:id="@+id/button_set_wallpaper"
@@ -75,7 +77,8 @@
                         android:text="@string/button_set_wallpaper"
                         android:onClick="buttonAction"
                         android:layout_alignParentBottom="true"
-                        android:layout_marginTop="@dimen/button_default_margin"/>
+                        android:layout_marginTop="@dimen/button_default_margin"
+                        android:layout_width="fill_parent"/>
             </LinearLayout>
         </LinearLayout>
 
