@@ -39,3 +39,4 @@ local.properties
 *~
 
 ## Project ignores ##
+res/drawable/gallery*
