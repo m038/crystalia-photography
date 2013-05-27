@@ -12,8 +12,14 @@
 	<string name="pref_description_change_interval">Set the interval in minutes</string>
     <string name="pref_dialog_change_interval_plus_sign">+</string>
     <string name="pref_dialog_change_interval_minus_sign">-</string>
-    <string name="pref_dialog_change_interval_text">60 = 1 hour\n1440 = 1 day
-    </string>
+    <string name="pref_dialog_change_interval_text"><![CDATA[
+60 = 1 hour\n
+180 = 3 hours\n
+360 = 6 hours\n
+720 = 12 hours\n
+1440 = 1 day\n
+10080 = 1 week (and maximum)
+    ]]></string>
 		
 	<string name="pref_title_random_order">Random order</string>
 	<string name="pref_description_random_order">Display images in random order instead of publish order</string>

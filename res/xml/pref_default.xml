@@ -18,7 +18,7 @@
 
 		<nl.gorinskat.crystalia.NumberPickerPreference
 		    android:defaultValue="5"
-            android:max="100"
+            android:max="10080"
             custom:min="1"
             android:dependency="multi_image_enable"
 		    android:key="multi_image_change_interval"

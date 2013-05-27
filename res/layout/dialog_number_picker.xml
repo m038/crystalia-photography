@@ -16,7 +16,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:text="@string/pref_dialog_change_interval_plus_sign"
-        android:onClick="fieldValueIncrement" />
+        />
 
     <EditText
         android:id="@+id/number_picker_value"
@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/number_picker_value"
         android:text="@string/pref_dialog_change_interval_minus_sign"
-        android:onClick="fieldValueDecrement" />
+        />
 
     <TextView
         android:id="@+id/number_picker_explanation"

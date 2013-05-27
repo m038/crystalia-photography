@@ -2,27 +2,35 @@ package nl.gorinskat.crystalia;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.os.Handler;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.os.SystemClock;
 import android.preference.DialogPreference;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class NumberPickerPreference extends DialogPreference {
+import java.lang.reflect.Method;
 
-	private static final String LOGTAG = "nl.gorinskat.crystalia";
+public class NumberPickerPreference extends DialogPreference {
 
     private static final int DEFAULT_VALUE = 1;
     private static final int MINIMUM_VALUE = 1;
     private static final int MAXIMUM_VALUE = 999999;
+    private static final int BUTTON_REPEAT_INTERVAL = 100; // ms
 
 	private int valueMax, valueMin, valueInt;
     private String valueStr;
 
 	private EditText editText;
+
+    private Handler mHandler = new Handler();
 
     public NumberPickerPreference(Context context)
     {
@@ -66,6 +74,23 @@ public class NumberPickerPreference extends DialogPreference {
         return a.getInt(index, DEFAULT_VALUE);
     }
 
+
+    private Runnable runnableIncrementValue = new Runnable()
+    {
+        public void run() {
+            incrementValue();
+            mHandler.postDelayed(this, BUTTON_REPEAT_INTERVAL);
+        }
+    };
+
+    private Runnable runnableDecrementValue = new Runnable()
+    {
+        public void run() {
+            decrementValue();
+            mHandler.postDelayed(this, 100);
+        }
+    };
+
     @Override
     protected void onBindDialogView(View view)
     {
@@ -74,26 +99,62 @@ public class NumberPickerPreference extends DialogPreference {
         editText = (EditText) view.findViewById(R.id.number_picker_value);
         editText.setText(valueStr);
 
+        editText.addTextChangedListener(new TextWatcher(){
+            public void afterTextChanged(Editable s) {
+                // Update with new textvalue
+                Log.d(CrystaliaActivity.APP_NAMESPACE,
+                        "textvalue: "+ s.toString());
+                setValue(String.valueOf(s));
+                // TODO: check if textChange should be leading or button
+                // press or both somehow ?!?!?!?
+            }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after){}
+            public void onTextChanged(CharSequence s, int start, int before, int count){}
+        });
+
         Button buttonIncrement = (Button) view.findViewById(R.id.button_plus);
         Button buttonDecrement = (Button) view.findViewById(R.id.button_minus);
 
-		buttonIncrement.setOnClickListener(new View.OnClickListener() {
-			public void onClick(View v) {
-    			int value = getValueInt();
-                value++;
-                setValue(value);
-                editText.setText(getValueString());
-			}
-		});
+        buttonIncrement.setOnTouchListener(new View.OnTouchListener()
+        {
+            public boolean onTouch(View view, MotionEvent motionevent)
+            {
+                int action = motionevent.getAction();
+                if (action == MotionEvent.ACTION_DOWN) {
 
-		buttonDecrement.setOnClickListener(new View.OnClickListener() {
-			public void onClick(View v) {
-				int value = getValueInt();
-                value--;
-                setValue(value);
-                editText.setText(getValueString());
-			}
-		});
+                    incrementValue();
+
+                    mHandler.removeCallbacks(runnableIncrementValue);
+                    mHandler.postDelayed(runnableIncrementValue,
+                            BUTTON_REPEAT_INTERVAL);
+
+                } else if (action == MotionEvent.ACTION_UP) {
+
+                    mHandler.removeCallbacks(runnableIncrementValue);
+                }
+                return false;
+            }
+        });
+
+        buttonDecrement.setOnTouchListener(new View.OnTouchListener()
+        {
+            public boolean onTouch(View view, MotionEvent motionevent)
+            {
+                int action = motionevent.getAction();
+                if (action == MotionEvent.ACTION_DOWN) {
+
+                    decrementValue();
+
+                    mHandler.removeCallbacks(runnableDecrementValue);
+                    mHandler.postDelayed(runnableDecrementValue, BUTTON_REPEAT_INTERVAL);
+
+                } else if (action == MotionEvent.ACTION_UP) {
+
+                    mHandler.removeCallbacks(runnableDecrementValue);
+                }
+                return false;
+            }
+        });
     }
 
     public int getMinValue()
@@ -168,6 +229,22 @@ public class NumberPickerPreference extends DialogPreference {
             persistString(sValue);
             notifyChanged();
         }
+    }
+
+    private void incrementValue() {
+        // Increment value
+        int value = getValueInt();
+        value++;
+        setValue(value);
+        editText.setText(getValueString());
+    }
+
+    private void decrementValue() {
+        // Increment value
+        int value = getValueInt();
+        value--;
+        setValue(value);
+        editText.setText(getValueString());
     }
 
     @Override
